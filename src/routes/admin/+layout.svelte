@@ -1,5 +1,8 @@
 <script lang="ts">
 	import './admin.css';
+	import '@fontsource/rubik/400.css';
+	import '@fontsource/rubik/500.css';
+	import '@fontsource/rubik/700.css';
 	import { sound } from '$lib/utils/sound';
 	import { User as UserIcon, Exit as ExitIcon } from '$lib/icons';
 

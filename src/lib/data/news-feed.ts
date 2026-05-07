@@ -2,7 +2,8 @@
  * Minimal Supabase query for RSS/sitemap. Server-only.
  * - updated: business "last updated" date (shown in UI, editable in admin).
  * - updated_at: row metadata, set on insert/update; we use it for sitemap lastmod when updated is null.
- * Env: PUBLIC_SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY; fallback: anon key if RLS allows public read.
+ * Env: PUBLIC_SUPABASE_URL (or SUPABASE_URL) + SUPABASE_SERVICE_ROLE_KEY;
+ * fallback: anon key if RLS allows public read.
  */
 import { createClient } from '@supabase/supabase-js';
 import { env as publicEnv } from '$env/dynamic/public';
@@ -18,7 +19,7 @@ export type NewsFeedItem = {
 };
 
 async function queryNewsPosts(limit: number): Promise<NewsFeedItem[]> {
-	const url = publicEnv.PUBLIC_SUPABASE_URL;
+	const url = publicEnv.PUBLIC_SUPABASE_URL || privateEnv.SUPABASE_URL;
 	if (!url) return [];
 
 	const run = async (key: string) => {
@@ -37,7 +38,7 @@ async function queryNewsPosts(limit: number): Promise<NewsFeedItem[]> {
 		const data = await run(serviceKey);
 		if (data?.length) return data as NewsFeedItem[];
 	}
-	const anonKey = publicEnv.PUBLIC_SUPABASE_ANON_KEY;
+	const anonKey = publicEnv.PUBLIC_SUPABASE_ANON_KEY || publicEnv.PUBLIC_SUPABASE_PUBLISHABLE_KEY;
 	if (anonKey) {
 		const data = await run(anonKey);
 		if (data?.length) return data as NewsFeedItem[];

@@ -30,7 +30,7 @@
 				</form>
 			</nav>
 		</header>
-		<main class="admin-main" role="main">
+		<main class="admin-main">
 			{@render children()}
 		</main>
 	</div>

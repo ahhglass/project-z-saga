@@ -9,11 +9,11 @@ import { env as publicEnv } from '$env/dynamic/public';
 import { env } from '$env/dynamic/private';
 
 export function getSupabaseServer() {
-	const url = publicEnv.PUBLIC_SUPABASE_URL;
+	const url = publicEnv.PUBLIC_SUPABASE_URL || env.SUPABASE_URL;
 	const key = env.SUPABASE_SERVICE_ROLE_KEY;
 	if (!url || !key) {
 		throw new Error(
-			'Missing env: PUBLIC_SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY. Add them in Vercel (Environment Variables) or .env.local.'
+			'Missing env: set SUPABASE_SERVICE_ROLE_KEY and PUBLIC_SUPABASE_URL (or SUPABASE_URL) in Vercel Environment Variables or .env.local.'
 		);
 	}
 	return createClient(url, key);

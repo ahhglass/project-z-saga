@@ -1,0 +1,109 @@
+@use '$lib/scss/mixins' as *;
+
+// Project Z Saga — greens: #36AC30, #7DF274, #5FD055, #0A4A08, #042102 + dark purple
+@mixin base-theme {
+	@include define-color('primary', #36AC30);
+	@include define-color('primary-shade', #5FD055);
+	@include define-color('primary-tint', #e8fae7);
+
+	@include define-color('curseforge', #7DF274);
+	@include define-color('curseforge-shade', #5FD055);
+	@include define-color('curseforge-tint', #7DF274);
+
+	@include define-color('secondary', #4A2C7A);
+	@include define-color('secondary-shade', #6B4A9E);
+	@include define-color('secondary-tint', #f0ebf8);
+
+	@include define-color('yellow', #ffd400);
+
+	@include define-color('text', #1c1e26);
+	@include define-color('text-shade', #5d5f65);
+	@include define-color('text-inverse', #ffffff);
+	@include define-color('text-inverse-shade', #9eb4b5);
+
+	@include define-color('main-content', #e5e5e5);
+	@include define-color('page-background', #f2f9f1);
+	@include define-color('post-page-background', #eef8ed);
+	@include define-color('card-background', #ffffff);
+
+	@include define-color('callout-background', #f2f9f1);
+	@include define-color('code-background', #042102);
+	@include define-color('code-text', #7DF274);
+	@include define-color('code-inline-background', #e3ebe2);
+
+	--color--waves-start: rgba(var(--color--primary-rgb), 0.75);
+	--color--waves-end: rgba(var(--color--secondary-rgb), 0.25);
+
+	--card-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.08);
+	--card-shadow-hover: 0px 4px 10px 8px rgb(0 0 0 / 10%);
+	--image-shadow: 8px 14px 38px rgba(4, 33, 2, 0.06), 1px 3px 8px rgba(4, 33, 2, 0.03);
+
+	--color--team-card-bg: #f0f7ef;
+	--color--team-card-border: rgba(54, 172, 48, 0.12);
+	--color--team-card-avatar-bg: #e0ede0;
+	--color--team-badge-bg: rgba(54, 172, 48, 0.15);
+	--color--team-badge-text: #0A4A08;
+
+	--color--team-card-text: rgba(228, 228, 228, 1);
+	--color--team-card-panel-from: rgba(var(--color--code-background-rgb), 0.92);
+	--color--team-card-panel-to: rgba(var(--color--code-background-rgb), 0.32);
+	--color--team-card-panel-badge-bg: rgba(255, 255, 255, 0.15);
+
+	--text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+@mixin dark-theme {
+	@include define-color('primary', #5FD055);
+	@include define-color('primary-shade', #36AC30);
+	@include define-color('primary-tint', #042102);
+
+	@include define-color('curseforge', #7DF274);
+	@include define-color('curseforge-shade', #5FD055);
+	@include define-color('curseforge-tint', #36AC30);
+
+	@include define-color('secondary', #6B4A9E);
+	@include define-color('secondary-shade', #4A2C7A);
+	@include define-color('secondary-tint', #1a0a2e);
+
+	@include define-color('yellow', #ffd400);
+
+	@include define-color('text', #ffffff);
+	@include define-color('text-shade', #9eb4b5);
+	@include define-color('text-inverse', #1c1e26);
+	@include define-color('text-inverse-shade', #5d5f65);
+
+	@include define-color('main-content', #48494A);
+	@include define-color('page-background', #313233);
+	@include define-color('post-page-background', #0a0f09);
+	@include define-color('card-background', #1a2319);
+
+	@include define-color('callout-background', #042102);
+	@include define-color('code-inline-background', #1a2e18);
+
+	--color--team-card-bg: #152014;
+	--color--team-card-border: rgba(95, 208, 85, 0.12);
+	--color--team-card-avatar-bg: #0f160e;
+	--color--team-badge-bg: rgba(95, 208, 85, 0.2);
+	--color--team-badge-text: #7DF274;
+
+	--color--team-card-text: rgba(112, 112, 112, 1);
+	--color--team-card-panel-from: rgba(4, 33, 2, 0.98);
+	--color--team-card-panel-to: rgba(4, 33, 2, 0.48);
+	--color--team-card-panel-badge-bg: rgba(255, 255, 255, 0.32);
+
+	--text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.4);
+}
+
+:root {
+	@include base-theme;
+
+	&[data-theme='dark'] {
+		@include dark-theme;
+	}
+
+	&[data-theme='auto'] {
+		@media (prefers-color-scheme: dark) {
+			@include dark-theme;
+		}
+	}
+}

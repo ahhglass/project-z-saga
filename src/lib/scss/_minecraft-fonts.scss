@@ -1,0 +1,16 @@
+/* Minecraft fonts from static/fonts: Seven (body), Ten (headings) */
+@font-face {
+	font-family: 'MinecraftSeven';
+	src: url('/fonts/MinecraftSevenv2.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'MinecraftTen';
+	src: url('/fonts/MinecraftTenv2.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}

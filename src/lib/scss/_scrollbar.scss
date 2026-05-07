@@ -1,0 +1,35 @@
+// Custom scrollbar + prevent layout shift (scrollbar-gutter)
+// See: https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-gutter
+
+html {
+	scrollbar-gutter: stable;
+}
+
+html {
+	scrollbar-width: thin;
+	scrollbar-color: var(--color--primary-shade) var(--color--page-background);
+}
+
+html::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+html::-webkit-scrollbar-track {
+	background: var(--color--page-background);
+}
+
+html::-webkit-scrollbar-thumb {
+	background: var(--color--primary-shade);
+	border-radius: 10px;
+	border: 2px solid var(--color--page-background);
+}
+
+html::-webkit-scrollbar-thumb:hover,
+html::-webkit-scrollbar-thumb:active {
+	background: var(--color--primary);
+}
+
+html::-webkit-scrollbar-corner {
+	background: var(--color--page-background);
+}

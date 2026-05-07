@@ -1,0 +1,33 @@
+@use 'sass:math';
+@use './functions' as *;
+
+// Fluid typography: min size at min viewport, max size at max viewport (like design).
+// Default 20rem (320px) to 240rem (3840px).
+@mixin fluid-text($min-size, $max-size, $min-width: 20rem, $max-width: 240rem) {
+	$min-size-num: strip-unit($min-size);
+	$max-size-num: strip-unit($max-size);
+	$min-width-num: strip-unit($min-width);
+	$max-width-num: strip-unit($max-width);
+	$min-unit: math.unit($min-size);
+
+	font-size: clamp(
+		#{$min-size},
+		#{$min-size-num}#{$min-unit} + (#{$max-size-num} - #{$min-size-num}) * ((100vw - #{$min-width}) / (#{$max-width-num} - #{$min-width-num})),
+		#{$max-size}
+	);
+}
+
+// Fluid size for any property (padding, margin, width, gap, etc.).
+@mixin fluid-size($property, $min-size, $max-size, $min-width: 20rem, $max-width: 240rem) {
+	$min-size-num: strip-unit($min-size);
+	$max-size-num: strip-unit($max-size);
+	$min-width-num: strip-unit($min-width);
+	$max-width-num: strip-unit($max-width);
+	$min-unit: math.unit($min-size);
+
+	#{$property}: clamp(
+		#{$min-size},
+		#{$min-size-num}#{$min-unit} + (#{$max-size-num} - #{$min-size-num}) * ((100vw - #{$min-width}) / (#{$max-width-num} - #{$min-width-num})),
+		#{$max-size}
+	);
+}

@@ -1,0 +1,112 @@
+/* Article/markdown content — same as sveltekit-static-blog-template */
+@use './fluid' as *;
+
+#article-content {
+	.content {
+		@include fluid-text(0.8125rem, 1.0625rem);
+
+		a:not(.button) {
+			&:hover {
+				filter: drop-shadow(0px 0px 3px var(--color--primary));
+			}
+		}
+
+		p {
+			margin: 0.75rem 0;
+			line-height: 1.55em;
+			@include fluid-text(0.9375rem, 1.0625rem);
+		}
+
+		ul,
+		ol {
+			margin: 0.75rem 0;
+			padding-left: 1.5em;
+		}
+
+		li {
+			margin: 0.35em 0;
+			line-height: 1.55;
+			@include fluid-text(0.9375rem, 1.0625rem);
+		}
+
+		h2 {
+			margin: 3rem 0 0.5rem;
+			@include fluid-text(1.5rem, 1.8rem);
+		}
+
+		h3 {
+			@include fluid-text(1.1rem, 1.2rem);
+			margin: 2rem 0 0.3rem;
+		}
+
+		h4 {
+			@include fluid-text(1.2rem, 1.3rem);
+			margin: 2rem 0 0.3rem;
+		}
+
+		picture {
+			display: inline;
+		}
+
+		img {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 2rem;
+			margin-bottom: 2rem;
+			max-width: 100%;
+			height: auto;
+			width: auto;
+			box-shadow: var(--image-shadow);
+		}
+
+		figcaption {
+			@include fluid-text(0.8125rem, 0.9rem);
+			text-align: center;
+			margin-bottom: 2rem;
+			color: rgba(var(--color--text-rgb), 0.8);
+		}
+
+		img + figcaption {
+			margin-top: -1rem;
+		}
+
+		blockquote {
+			padding: 25px 25px 15px;
+			border-radius: 20px;
+			@include fluid-text(0.9375rem, 1.1rem);
+			border-left: 4px solid var(--color--primary);
+			background: var(--color--callout-background);
+
+			p {
+				@include fluid-text(0.9375rem, 1.0625rem);
+			}
+		}
+
+		code:not([class*='language-']) {
+			font-family: var(--font--mono);
+			background: var(--color--code-inline-background);
+			padding: 4px 8px;
+			border-radius: 6px;
+			@include fluid-text(0.8125rem, 0.9375rem);
+		}
+
+		code {
+			font-family: var(--font--mono);
+		}
+
+		pre[class*='language-'] {
+			@include fluid-text(0.8125rem, 0.9375rem);
+		}
+	}
+
+	.heading-link {
+		color: var(--color--primary);
+		text-decoration: none;
+		margin-right: 10px;
+	}
+
+	img {
+		border-radius: 6px;
+	}
+}

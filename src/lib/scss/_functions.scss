@@ -1,0 +1,16 @@
+@use 'sass:math';
+@use 'sass:meta';
+@use 'sass:color';
+
+// Strip units from a number (for fluid calc).
+@function strip-unit($value) {
+	@if meta.type-of($value) == 'number' {
+		@return math.div($value, $value * 0 + 1);
+	}
+	@return $value;
+}
+
+// Calculate brightness of a given color (0–255). Returns a number for use in Sass (e.g. contrast).
+@function brightness($c) {
+	@return (color.red($c) * 0.299) + (color.green($c) * 0.587) + (color.blue($c) * 0.114);
+}

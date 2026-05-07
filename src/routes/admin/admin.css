@@ -1,5 +1,6 @@
 /* Admin — design system for all admin pages */
 /* Theme-aware: light tones by default, dark when site theme is dark */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
 
 /* Light theme (default) */
 .admin-layout {

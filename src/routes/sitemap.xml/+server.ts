@@ -1,5 +1,6 @@
 import { getSupabaseServer } from '$lib/supabaseServer';
 import { getNewsFeedItems } from '$lib/data/news-feed';
+import { loadWikiArticles, loadWikiCategories } from '$lib/data/wiki';
 import { siteBaseUrl } from '$lib/data/meta';
 
 const xml = (s: string) =>
@@ -22,6 +23,7 @@ export async function GET() {
 	const staticUrls = [
 		{ loc: `${base}/`, priority: '1.0', changefreq: 'weekly' },
 		{ loc: `${base}/news`, priority: '0.9', changefreq: 'daily' },
+		{ loc: `${base}/wiki`, priority: '0.85', changefreq: 'weekly' },
 		{ loc: `${base}/team`, priority: '0.8', changefreq: 'monthly' },
 		{ loc: `${base}/faq`, priority: '0.8', changefreq: 'monthly' }
 	];
@@ -33,6 +35,20 @@ export async function GET() {
 		changefreq: 'monthly' as const
 	}));
 
+	const wikiArticles = await loadWikiArticles();
+	const wikiCats = await loadWikiCategories();
+	const wikiCategoryUrls = wikiCats.map((c) => ({
+		loc: `${base}/wiki/${c.id}`,
+		priority: '0.75',
+		changefreq: 'weekly' as const
+	}));
+	const wikiArticleUrls = wikiArticles.map((a) => ({
+		loc: `${base}/wiki/${a.categoryId}/${a.slug}`,
+		lastmod: a.updatedAt?.slice(0, 10),
+		priority: '0.72',
+		changefreq: 'monthly' as const
+	}));
+
 	const urlNodes = [
 		...staticUrls.map(
 			(u) => `  <url><loc>${xml(u.loc)}</loc><changefreq>${u.changefreq}</changefreq><priority>${u.priority}</priority></url>`
@@ -40,6 +56,14 @@ export async function GET() {
 		...newsUrls.map(
 			(u) =>
 				`  <url><loc>${xml(u.loc)}</loc><lastmod>${u.lastmod}</lastmod><changefreq>${u.changefreq}</changefreq><priority>${u.priority}</priority></url>`
+		),
+		...wikiCategoryUrls.map(
+			(u) =>
+				`  <url><loc>${xml(u.loc)}</loc><changefreq>${u.changefreq}</changefreq><priority>${u.priority}</priority></url>`
+		),
+		...wikiArticleUrls.map(
+			(u) =>
+				`  <url><loc>${xml(u.loc)}</loc>${u.lastmod ? `<lastmod>${u.lastmod}</lastmod>` : ''}<changefreq>${u.changefreq}</changefreq><priority>${u.priority}</priority></url>`
 		)
 	].join('\n');
 

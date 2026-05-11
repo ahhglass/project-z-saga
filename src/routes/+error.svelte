@@ -23,7 +23,7 @@
 	<div class="container">
 		<h1>{title}</h1>
 		<div class="img-wrapper">
-			<img src="/images/error-ichigo.webp" alt="Ichigo Kurosaki" />
+			<img src="/images/error.webp" alt="Error Image" />
 		</div>
 		<p>{message}</p>
 		{#if error?.message && status >= 500}

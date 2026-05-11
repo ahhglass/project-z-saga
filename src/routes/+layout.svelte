@@ -1,5 +1,10 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
+	import { afterNavigate } from '$app/navigation';
+	import { get } from 'svelte/store';
+	import '@fontsource/ubuntu-mono/latin.css';
+	import '@fontsource/ubuntu-mono/latin-italic.css';
 	import '$lib/scss/global.scss';
 	import { page } from '$app/stores';
 	import { description as defaultDesc, image as defaultImage, keywords as defaultKeywords, title as defaultTitle, siteBaseUrl as defaultBaseUrl } from '$lib/data/meta';
@@ -53,6 +58,12 @@
 		initSound();
 	});
 
+	afterNavigate(() => {
+		if (!browser || typeof document === 'undefined') return;
+		if (get(serverModalOpen)) return;
+		document.body.style.removeProperty('overflow');
+	});
+
 	let open = $state(false);
 	let prevOpen = $state(false);
 	$effect(() => {
@@ -76,6 +87,7 @@
 			links={[
 				{ href: '/', label: 'Home' },
 				{ href: '/news', label: 'News' },
+				{ href: '/wiki', label: 'Wiki' },
 				{ href: '/team', label: 'Team' },
 				{ href: '/faq', label: 'FAQ' }
 			]}

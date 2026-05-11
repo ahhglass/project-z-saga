@@ -12,5 +12,6 @@
 
 // Calculate brightness of a given color (0–255). Returns a number for use in Sass (e.g. contrast).
 @function brightness($c) {
-	@return (color.red($c) * 0.299) + (color.green($c) * 0.587) + (color.blue($c) * 0.114);
+	@return (color.channel($c, 'red', $space: rgb) * 0.299) +
+		(color.channel($c, 'green', $space: rgb) * 0.587) + (color.channel($c, 'blue', $space: rgb) * 0.114);
 }

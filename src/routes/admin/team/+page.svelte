@@ -246,6 +246,6 @@
 		</div>
 	{/each}
 	{#if sections.length === 0}
-		<p class="empty">No sections. Add one above or run <code>node scripts/seed-team.js</code>.</p>
+		<p class="empty">No sections yet. Add one above.</p>
 	{/if}
 </section>

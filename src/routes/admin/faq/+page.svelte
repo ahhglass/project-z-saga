@@ -184,6 +184,6 @@
 		{/each}
 	</ul>
 	{#if items.length === 0}
-		<p class="empty">No items. Add one above or run <code>node scripts/seed-faq.js</code> to copy existing FAQ from code.</p>
+		<p class="empty">No items yet. Add one above.</p>
 	{/if}
 </section>

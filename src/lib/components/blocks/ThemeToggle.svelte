@@ -13,12 +13,23 @@
 			: 'auto';
 
 	let themeValue = $state(initialTheme);
+	let labelPeek = $state(false);
+	let hideLabelTimer: ReturnType<typeof setTimeout> | undefined;
+
 	$effect(() => {
 		const unsub = theme.subscribe((v) => {
 			themeValue = v;
 		});
 		return unsub;
 	});
+
+	$effect(() => {
+		return () => {
+			if (hideLabelTimer !== undefined) clearTimeout(hideLabelTimer);
+		};
+	});
+
+	const LABEL_HIDE_DELAY_MS = 1600;
 
 	function toggleTheme() {
 		if (themeValue === 'auto') {
@@ -28,6 +39,13 @@
 		} else {
 			theme.set('auto');
 		}
+
+		if (hideLabelTimer !== undefined) clearTimeout(hideLabelTimer);
+		labelPeek = true;
+		hideLabelTimer = setTimeout(() => {
+			labelPeek = false;
+			hideLabelTimer = undefined;
+		}, LABEL_HIDE_DELAY_MS);
 	}
 </script>
 
@@ -41,6 +59,7 @@
 
 <button
 	class="theme-toggle"
+	class:label-visible={labelPeek}
 	title="Toggle between light and dark theme"
 	data-theme={themeValue}
 	onclick={toggleTheme}
@@ -118,9 +137,7 @@
 			opacity: 0;
 		}
 
-		&[data-theme='auto'] .label,
-		&[data-theme='light'] .label,
-		&[data-theme='dark'] .label {
+		&.label-visible .label {
 			opacity: 1;
 			transform: scaleX(1);
 			max-width: 36px;
@@ -148,7 +165,14 @@
 	}
 
 	.label {
-		transition: all 0.5s var(--ease-4);
+		display: inline-block;
+		overflow: hidden;
+		white-space: nowrap;
+		transition:
+			opacity 0.45s var(--ease-4),
+			transform 0.45s var(--ease-4),
+			max-width 0.45s var(--ease-4),
+			color 0.2s var(--ease-out-3);
 		text-transform: uppercase;
 		font-size: 0.6rem;
 		opacity: 0;

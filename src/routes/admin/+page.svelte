@@ -33,6 +33,11 @@
 		<p>Manage FAQ items and tags.</p>
 		<span>Edit FAQ →</span>
 	</a>
+	<a href="/admin/wiki" class="dashboard-card" use:sound>
+		<h2>Wiki</h2>
+		<p>Edit markdown articles shown on /wiki.</p>
+		<span>Open wiki editor →</span>
+	</a>
 	<a href="/admin/settings" class="dashboard-card" use:sound>
 		<h2>Settings</h2>
 		<p>Site meta, hero, server IP.</p>

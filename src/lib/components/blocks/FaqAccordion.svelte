@@ -77,7 +77,7 @@
 		min-width: 0;
 		word-break: break-word;
 		overflow-wrap: break-word;
-		@include fluid-text(0.9375rem, 1rem);
+		@include fluid-text(0.75rem, 1.36rem);
 	}
 
 	.meta {
@@ -134,7 +134,7 @@
 	.answer {
 		margin: 0;
 		padding-top: 4px;
-		@include fluid-text(0.8125rem, 0.9rem);
+		@include fluid-text(0.65rem, 1.224rem);
 		line-height: 1.5;
 		word-break: break-word;
 		overflow-wrap: break-word;

@@ -68,12 +68,12 @@
 		font-weight: 900;
 		text-align: center;
 		text-shadow: 2px 2px 0px rgba(10, 74, 8, 0.9), -1px -1px 0px rgba(74, 44, 122, 0.6);
-		@include fluid-text(1.5rem, 3rem);
+		@include fluid-text(1rem, 4.08rem);
 	}
 
 	.intro {
 		font-weight: 500;
-		@include fluid-text(1rem, 1.25rem);
+		@include fluid-text(0.8rem, 1.7rem);
 		width: min(100%, 440px);
 		display: flex;
 		flex-direction: column;

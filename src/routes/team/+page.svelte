@@ -58,7 +58,7 @@
 		margin-bottom: 48px;
 
 		.label {
-			@include fluid-text(0.75rem, 0.875rem);
+			@include fluid-text(0.6rem, 1.19rem);
 			letter-spacing: 0.15em;
 			color: var(--color--text-shade);
 			margin: 0 0 8px;
@@ -74,7 +74,7 @@
 			font-family: var(--font--title);
 			margin: 0 0 16px;
 			color: var(--color--text);
-			@include fluid-text(1.75rem, 2.25rem);
+			@include fluid-text(1.4rem, 3.06rem);
 
 			@include for-phone-only {
 				font-size: 1.5rem;
@@ -91,7 +91,7 @@
 	}
 
 	.section-title {
-		@include fluid-text(1.125rem, 1.25rem);
+		@include fluid-text(0.9rem, 1.7rem);
 		font-weight: 600;
 		color: var(--color--text);
 		margin: 0 0 20px;

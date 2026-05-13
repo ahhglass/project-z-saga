@@ -164,7 +164,7 @@
 
 	.title {
 		font-family: 'MinecraftTen', sans-serif;
-		@include fluid-text(1rem, 1.1rem);
+		@include fluid-text(0.8rem, 1.496rem);
 		font-weight: bold;
 		line-height: 1.3;
 		margin: 0;
@@ -178,7 +178,7 @@
 	}
 
 	.meta {
-		@include fluid-text(0.75rem, 0.8rem);
+		@include fluid-text(0.6rem, 1.088rem);
 		color: var(--color--text-shade);
 
 		@include for-phone-only {
@@ -187,7 +187,7 @@
 	}
 
 	.excerpt {
-		@include fluid-text(0.85rem, 0.9rem);
+		@include fluid-text(0.68rem, 1.224rem);
 		margin: 0;
 		line-height: 1.4;
 		color: var(--color--text-shade);
@@ -224,7 +224,7 @@
 		padding: 0.2rem 0.5rem;
 		border-radius: 0;
 		border: 1px solid var(--mc-hr-bottom, rgba(0, 0, 0, 0.2));
-		@include fluid-text(0.7rem, 0.75rem);
+		@include fluid-text(0.56rem, 1.02rem);
 		background: var(--color--team-badge-bg);
 		color: var(--color--team-badge-text);
 

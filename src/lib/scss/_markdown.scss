@@ -3,7 +3,7 @@
 
 #article-content {
 	.content {
-		@include fluid-text(0.8125rem, 1.0625rem);
+		@include fluid-text(0.65rem, 1.445rem);
 
 		a:not(.button) {
 			&:hover {
@@ -14,7 +14,7 @@
 		p {
 			margin: 0.75rem 0;
 			line-height: 1.55em;
-			@include fluid-text(0.9375rem, 1.0625rem);
+			@include fluid-text(0.75rem, 1.445rem);
 		}
 
 		ul,
@@ -26,21 +26,21 @@
 		li {
 			margin: 0.35em 0;
 			line-height: 1.55;
-			@include fluid-text(0.9375rem, 1.0625rem);
+			@include fluid-text(0.75rem, 1.445rem);
 		}
 
 		h2 {
 			margin: 3rem 0 0.5rem;
-			@include fluid-text(1.5rem, 1.8rem);
+			@include fluid-text(1.2rem, 2.448rem);
 		}
 
 		h3 {
-			@include fluid-text(1.1rem, 1.2rem);
+			@include fluid-text(0.88rem, 1.632rem);
 			margin: 2rem 0 0.3rem;
 		}
 
 		h4 {
-			@include fluid-text(1.2rem, 1.3rem);
+			@include fluid-text(0.96rem, 1.768rem);
 			margin: 2rem 0 0.3rem;
 		}
 
@@ -61,7 +61,7 @@
 		}
 
 		figcaption {
-			@include fluid-text(0.8125rem, 0.9rem);
+			@include fluid-text(0.65rem, 1.224rem);
 			text-align: center;
 			margin-bottom: 2rem;
 			color: rgba(var(--color--text-rgb), 0.8);
@@ -74,12 +74,12 @@
 		blockquote {
 			padding: 25px 25px 15px;
 			border-radius: 20px;
-			@include fluid-text(0.9375rem, 1.1rem);
+			@include fluid-text(0.75rem, 1.496rem);
 			border-left: 4px solid var(--color--primary);
 			background: var(--color--callout-background);
 
 			p {
-				@include fluid-text(0.9375rem, 1.0625rem);
+				@include fluid-text(0.75rem, 1.445rem);
 			}
 		}
 
@@ -88,7 +88,7 @@
 			background: var(--color--code-inline-background);
 			padding: 4px 8px;
 			border-radius: 6px;
-			@include fluid-text(0.8125rem, 0.9375rem);
+			@include fluid-text(0.65rem, 1.275rem);
 		}
 
 		code {
@@ -96,7 +96,7 @@
 		}
 
 		pre[class*='language-'] {
-			@include fluid-text(0.8125rem, 0.9375rem);
+			@include fluid-text(0.65rem, 1.275rem);
 		}
 	}
 

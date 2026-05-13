@@ -248,7 +248,7 @@
 		margin-bottom: 1.5em;
 
 		.label {
-			@include fluid-text(0.75rem, 0.875rem);
+			@include fluid-text(0.6rem, 1.19rem);
 			letter-spacing: 0.15em;
 			color: var(--color--text-shade);
 			margin: 0 0 8px;
@@ -264,7 +264,7 @@
 			font-family: var(--font--title);
 			margin: 0 0 16px;
 			color: var(--color--text);
-			@include fluid-text(1.75rem, 2.25rem);
+			@include fluid-text(1.4rem, 3.06rem);
 
 			@include for-phone-only {
 				font-size: 1.5rem;
@@ -317,7 +317,7 @@
 	}
 
 	.empty {
-		@include fluid-text(0.9375rem, 1.0625rem);
+		@include fluid-text(0.75rem, 1.445rem);
 		text-align: center;
 		color: var(--color--text-shade);
 		padding: 2rem;
@@ -348,7 +348,7 @@
 	}
 
 	.pagination-link {
-		@include fluid-text(0.875rem, 1rem);
+		@include fluid-text(0.7rem, 1.36rem);
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
@@ -380,7 +380,7 @@
 	}
 
 	.pagination-ellipsis {
-		@include fluid-text(0.875rem, 1rem);
+		@include fluid-text(0.7rem, 1.36rem);
 		color: var(--color--text-shade);
 		padding: 0 0.25rem;
 		user-select: none;

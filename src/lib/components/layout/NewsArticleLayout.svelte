@@ -332,29 +332,29 @@
 			}
 
 			h1 {
-				@include fluid-text(1.5rem, 2.25rem);
+				@include fluid-text(1.2rem, 3.06rem);
 
 				@include for-phone-only {
-					font-size: clamp(1.15rem, 4.5vw + 0.8rem, 1.5rem);
+					font-size: clamp(0.92rem, 4.86vw + 0.64rem, 2.04rem);
 					line-height: 1.25;
 				}
 			}
 
 			.note {
-				@include fluid-text(0.8125rem, 0.9rem);
+				@include fluid-text(0.65rem, 1.224rem);
 				color: rgba(var(--color--text-rgb), 0.8);
 
 				@include for-phone-only {
-					font-size: 0.8125rem;
+					font-size: 0.65rem;
 				}
 			}
 			.secondary-note {
 				opacity: 0.4;
 				margin-top: -0.75em;
-				@include fluid-text(0.65rem, 0.85rem);
+				@include fluid-text(0.52rem, 1.156rem);
 
 				@include for-phone-only {
-					font-size: 0.75rem;
+					font-size: 0.6rem;
 				}
 			}
 
@@ -373,13 +373,13 @@
 			.tag {
 				padding: 4px 10px;
 				border-radius: 0;
-				@include fluid-text(0.6875rem, 0.8125rem);
+				@include fluid-text(0.55rem, 1.105rem);
 				background: var(--color--team-badge-bg);
 				color: var(--color--team-badge-text);
 
 				@include for-phone-only {
 					padding: 3px 8px;
-					font-size: 0.6875rem;
+					font-size: 0.55rem;
 				}
 			}
 		}
@@ -467,7 +467,7 @@
 
 		h2 {
 			font-family: 'MinecraftTen', sans-serif;
-			@include fluid-text(1.125rem, 1.25rem);
+			@include fluid-text(0.9rem, 1.7rem);
 			margin-bottom: 1rem;
 		}
 	}

@@ -223,7 +223,7 @@
 
 		h2 {
 			font-family: var(--font--title);
-			@include fluid-text(1.25rem, 1.8rem);
+			@include fluid-text(1rem, 2.448rem);
 			font-weight: 600;
 			margin: 0;
 			color: var(--color--text);
@@ -237,7 +237,7 @@
 			margin: 0;
 			line-height: 1.5;
 			color: var(--color--text);
-			@include fluid-text(0.9375rem, 1.125rem);
+			@include fluid-text(0.75rem, 1.53rem);
 
 			@include for-phone-only {
 				text-align: justify;

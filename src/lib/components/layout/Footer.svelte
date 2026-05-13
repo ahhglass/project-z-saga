@@ -126,7 +126,7 @@
 		word-break: break-word;
 		overflow-wrap: break-word;
 		line-height: 1.5;
-		@include fluid-text(0.875rem, 1rem);
+		@include fluid-text(0.7rem, 1.36rem);
 	}
 
 	.copyright {

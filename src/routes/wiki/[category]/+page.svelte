@@ -87,7 +87,7 @@
 		font-weight: 700;
 		color: var(--color--text);
 		margin: 0 0 10px;
-		@include fluid-text(1.5rem, 2rem);
+		@include fluid-text(1.2rem, 2.72rem);
 	}
 
 	.wiki-category-page__desc {

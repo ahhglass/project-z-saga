@@ -157,7 +157,7 @@
 
 	.label {
 		text-align: center;
-		@include fluid-text(0.75rem, 0.875rem);
+		@include fluid-text(0.6rem, 1.19rem);
 		letter-spacing: 0.15em;
 		color: var(--color--text-shade);
 		margin: 0 0 8px;
@@ -175,7 +175,7 @@
 		font-weight: 700;
 		color: var(--color--text);
 		margin: 0 0 40px;
-		@include fluid-text(1.75rem, 2.25rem);
+		@include fluid-text(1.4rem, 3.06rem);
 
 		@include for-phone-only {
 			font-size: 1.5rem;
@@ -197,7 +197,7 @@
 	}
 
 	.find-title {
-		@include fluid-text(1rem, 1.125rem);
+		@include fluid-text(0.8rem, 1.53rem);
 		font-weight: 600;
 		color: var(--color--text);
 		margin: 0 0 6px;
@@ -208,7 +208,7 @@
 	}
 
 	.find-desc {
-		@include fluid-text(0.875rem, 1rem);
+		@include fluid-text(0.7rem, 1.36rem);
 		color: var(--color--text-shade);
 		margin: 0 0 20px;
 

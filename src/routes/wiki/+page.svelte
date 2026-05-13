@@ -62,7 +62,7 @@
 		font-weight: 700;
 		color: var(--color--text);
 		margin: 0 0 12px;
-		@include fluid-text(1.75rem, 2.25rem);
+		@include fluid-text(1.4rem, 3.06rem);
 	}
 
 	.wiki-hub__intro {
@@ -70,7 +70,7 @@
 		max-width: 52ch;
 		margin: 0 0 28px;
 		line-height: 1.55;
-		@include fluid-text(0.9375rem, 1.0625rem);
+		@include fluid-text(0.75rem, 1.445rem);
 	}
 
 	.wiki-hub__grid {

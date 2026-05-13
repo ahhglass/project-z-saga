@@ -48,8 +48,10 @@
 </div>
 
 <style lang="scss">
+	@use '$lib/scss/fluid' as *;
+
 	.wiki-breadcrumb {
-		font-size: 0.875rem;
+		@include fluid-text(0.75rem, 0.9375rem);
 		color: var(--color--text-shade);
 		margin-bottom: 20px;
 
@@ -77,17 +79,19 @@
 		font-weight: 700;
 		color: var(--color--text);
 		margin: 0 0 8px;
-		font-size: clamp(1.35rem, 3vw, 1.85rem);
+		@include fluid-text(1rem, 2.515rem);
 	}
 
 	.wiki-article__updated {
-		font-size: 0.8125rem;
+		@include fluid-text(0.6rem, 0.8125rem);
 		color: var(--color--text-shade);
 		margin: 0 0 24px;
 	}
 
 	.wiki-article__body {
 		word-wrap: break-word;
+		@include fluid-text(0.65rem, 1.445rem);
+		line-height: 1.55;
 	}
 
 	.wiki-article__body :global(h2),
@@ -97,13 +101,20 @@
 		font-weight: 600;
 	}
 	.wiki-article__body :global(h2) {
-		font-size: 1.25em;
+		@include fluid-text(1.1rem, 2.448rem);
 	}
 	.wiki-article__body :global(h3) {
-		font-size: 1.1em;
+		@include fluid-text(0.8rem, 1.632rem);
 	}
 	.wiki-article__body :global(p) {
 		margin-bottom: 1em;
+		@include fluid-text(0.75rem, 1.445rem);
+		line-height: 1.55;
+	}
+	.wiki-article__body :global(li) {
+		margin: 0.35em 0;
+		@include fluid-text(0.75rem, 1.445rem);
+		line-height: 1.55;
 	}
 	.wiki-article__body :global(ul),
 	.wiki-article__body :global(ol) {
@@ -114,10 +125,11 @@
 		color: var(--color--primary);
 	}
 	.wiki-article__body :global(code) {
+		font-family: var(--font--mono);
 		background: var(--color--code-inline-background);
 		padding: 0.15em 0.4em;
 		border-radius: 4px;
-		font-size: 0.9em;
+		@include fluid-text(0.65rem, 1.275rem);
 	}
 	.wiki-article__body :global(pre) {
 		overflow-x: auto;
@@ -125,5 +137,7 @@
 		background: var(--color--code-inline-background);
 		border-radius: 8px;
 		margin-bottom: 1em;
+		font-family: var(--font--mono);
+		@include fluid-text(0.65rem, 1.275rem);
 	}
 </style>

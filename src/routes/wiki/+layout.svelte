@@ -144,6 +144,7 @@
 
 <style lang="scss">
 	@use '$lib/scss/breakpoints' as *;
+	@use '$lib/scss/fluid' as *;
 
 	.wiki-layout {
 		width: 100%;
@@ -174,13 +175,14 @@
 		flex: 1;
 		min-width: min(200px, 100%);
 		justify-content: center;
+		@include fluid-text(0.75rem, 1rem);
 	}
 
 	.wiki-toolbar__home {
 		color: var(--color--primary);
 		text-decoration: none;
 		font-weight: 600;
-		font-size: 0.875rem;
+		@include fluid-text(0.75rem, 1rem);
 
 		&:hover {
 			text-decoration: underline;
@@ -308,7 +310,7 @@
 	}
 
 	.wiki-sidebar__label {
-		font-size: 0.65rem;
+		@include fluid-text(0.48rem, 0.65rem);
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
 		color: var(--color--text-shade);
@@ -318,7 +320,7 @@
 	.wiki-sidebar__title-link {
 		font-family: var(--font--title);
 		font-weight: 700;
-		font-size: 1.35rem;
+		@include fluid-text(0.9375rem, 1.35rem);
 		color: var(--color--text);
 		text-decoration: none;
 		display: inline-block;
@@ -330,7 +332,7 @@
 	}
 
 	.wiki-sidebar__hint {
-		font-size: 0.8125rem;
+		@include fluid-text(0.6rem, 0.8125rem);
 		color: var(--color--text-shade);
 		margin: 0 0 16px;
 		line-height: 1.4;
@@ -347,7 +349,7 @@
 	.wiki-nav__category {
 		display: block;
 		font-weight: 600;
-		font-size: 0.875rem;
+		@include fluid-text(0.65rem, 0.875rem);
 		color: var(--color--text);
 		text-decoration: none;
 		padding: 4px 0;
@@ -371,7 +373,7 @@
 
 	.wiki-nav__article {
 		display: block;
-		font-size: 0.8125rem;
+		@include fluid-text(0.75rem, 0.9375rem);
 		color: var(--color--text-shade);
 		text-decoration: none;
 		padding: 4px 0;

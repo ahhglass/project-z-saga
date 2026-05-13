@@ -51,7 +51,7 @@
 
 		h1 {
 			font-family: var(--font--title);
-			font-size: clamp(1.5rem, 4vw, 2.25rem);
+			font-size: clamp(1.2rem, 4.32vw, 3.06rem);
 			margin: 0 0 1rem;
 			color: var(--color--text);
 		}
@@ -65,7 +65,7 @@
 
 		.error-detail {
 			margin-top: 0.5rem;
-			font-size: 0.9rem;
+			font-size: 0.72rem;
 			opacity: 0.9;
 		}
 

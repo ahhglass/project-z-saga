@@ -97,12 +97,12 @@
 	}
 	h1 {
 		margin: 0 0 0.25rem;
-		font-size: clamp(1.15rem, 1.1rem + 0.6vw, 1.25rem);
+		font-size: clamp(0.92rem, 0.88rem + 0.648vw, 1.7rem);
 		color: var(--color--text);
 	}
 	.hint {
 		margin: 0 0 1.25rem;
-		font-size: clamp(0.7125rem, 0.78rem + 0.3vw, 0.875rem);
+		font-size: clamp(0.57rem, 0.624rem + 0.324vw, 1.19rem);
 		color: var(--color--text-shade);
 	}
 	form {
@@ -116,7 +116,7 @@
 		background: rgba(200, 60, 60, 0.15);
 		color: var(--color--primary);
 		border-radius: 8px;
-		font-size: clamp(0.8125rem, 0.78rem + 0.25vw, 0.875rem);
+		font-size: clamp(0.65rem, 0.624rem + 0.27vw, 1.19rem);
 	}
 	.field {
 		display: flex;
@@ -124,7 +124,7 @@
 		gap: 0.35rem;
 	}
 	.field label {
-		font-size: clamp(0.8125rem, 0.78rem + 0.25vw, 0.875rem);
+		font-size: clamp(0.65rem, 0.624rem + 0.27vw, 1.19rem);
 		font-weight: 600;
 		color: var(--color--text);
 	}
@@ -224,7 +224,7 @@
 		margin-top: 0.25rem;
 		padding: 0.6rem 1rem;
 		min-height: 2.75rem;
-		font-size: clamp(0.9375rem, 0.88rem + 0.35vw, 1rem);
+		font-size: clamp(0.75rem, 0.704rem + 0.378vw, 1.36rem);
 		font-weight: 600;
 		color: white;
 		background: rgb(var(--color--primary-rgb));

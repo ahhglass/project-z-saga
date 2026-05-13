@@ -89,7 +89,8 @@
 				{ href: '/news', label: 'News' },
 				{ href: '/wiki', label: 'Wiki' },
 				{ href: '/team', label: 'Team' },
-				{ href: '/faq', label: 'FAQ' }
+				{ href: '/faq', label: 'FAQ' },
+				{ href: 'https://theprojectzsaga.guildtag.com/shop/', label: 'Store' }
 			]}
 		/>
 		<main class="main-content">

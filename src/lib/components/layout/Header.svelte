@@ -38,8 +38,18 @@
 
 	function handleMobileNavClick(e: MouseEvent, href: string) {
 		e.preventDefault();
-		goto(href);
 		closeMobile();
+		if (!browser) return;
+		try {
+			const url = new URL(href, window.location.href);
+			if (url.origin !== window.location.origin) {
+				window.location.href = url.href;
+				return;
+			}
+		} catch {
+			/* fall through to goto */
+		}
+		goto(href);
 	}
 
 	function handleToggleSound(): void {

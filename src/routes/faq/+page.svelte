@@ -241,6 +241,7 @@
 		display: flex;
 		align-items: center;
 		max-width: 380px;
+		@include fluid-text(0.65rem, 1.5rem);
 
 		&.has-clear .search-input {
 			padding-right: 2.75rem;
@@ -388,6 +389,7 @@
 	}
 
 	.curseforge-btn-text {
+		@include fluid-text(0.75rem, 1rem);
 		white-space: nowrap;
 	}
 
@@ -519,7 +521,7 @@
 		align-items: center;
 		gap: 4px;
 		padding: 4px 10px;
-		font-size: 0.75rem;
+		@include fluid-text(0.75rem, 1rem);
 		font-weight: 500;
 		border-radius: 14px;
 		border: none;
